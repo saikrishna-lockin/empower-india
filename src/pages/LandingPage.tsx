@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Lightbulb, Search, CheckCircle, TrendingUp, Building2, Users, FileText, Zap } from 'lucide-react';
+import { ArrowRight, Lightbulb, Search, CheckCircle, TrendingUp, Building2, Users, FileText, Zap, Rocket } from 'lucide-react';
 import { mockChallenges } from '../mockData';
 
 const LandingPage = () => {
@@ -47,32 +47,58 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Platform Statistics */}
-      <section className="py-12 bg-white border-b border-gray-200 relative -mt-16 mx-4 sm:mx-8 lg:mx-auto max-w-7xl rounded-xl shadow-lg">
+      {/* Platform at a Glance */}
+      <section className="py-7 sm:py-9 bg-white border border-gray-200/80 relative -mt-12 sm:-mt-16 mx-4 sm:mx-8 lg:mx-auto max-w-7xl rounded-xl shadow-sm">
         <div className="px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6">
-            <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Demo Platform Statistics</p>
+          <div className="text-center mb-6 sm:mb-7">
+            <h2 className="text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">Platform at a Glance</h2>
+            <p className="text-xs sm:text-sm text-gray-500 mt-1 max-w-xl mx-auto">
+              One streamlined platform connecting government challenges with startup innovation.
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="flex justify-center mb-2"><Building2 className="h-6 w-6 text-blue-600" /></div>
-              <p className="text-3xl font-bold text-navy-900">42</p>
-              <p className="text-sm font-medium text-gray-500">Government Challenges</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {/* Card 1 */}
+            <div className="bg-gray-50/70 border border-gray-100 rounded-lg p-5 flex flex-col items-center text-center hover:border-blue-100 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                <Building2 className="w-5 h-5 stroke-[1.75]" />
+              </div>
+              <h3 className="text-base font-bold text-navy-900 mb-1">Government Challenges</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Publish and manage real-world problems.
+              </p>
             </div>
-            <div>
-              <div className="flex justify-center mb-2"><Users className="h-6 w-6 text-blue-600" /></div>
-              <p className="text-3xl font-bold text-navy-900">1,204</p>
-              <p className="text-sm font-medium text-gray-500">Startups Registered</p>
+
+            {/* Card 2 */}
+            <div className="bg-gray-50/70 border border-gray-100 rounded-lg p-5 flex flex-col items-center text-center hover:border-blue-100 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                <Rocket className="w-5 h-5 stroke-[1.75]" />
+              </div>
+              <h3 className="text-base font-bold text-navy-900 mb-1">Startup Solutions</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Discover relevant and innovative solutions.
+              </p>
             </div>
-            <div>
-              <div className="flex justify-center mb-2"><FileText className="h-6 w-6 text-blue-600" /></div>
-              <p className="text-3xl font-bold text-navy-900">315</p>
-              <p className="text-sm font-medium text-gray-500">Solutions Evaluated</p>
+
+            {/* Card 3 */}
+            <div className="bg-gray-50/70 border border-gray-100 rounded-lg p-5 flex flex-col items-center text-center hover:border-blue-100 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                <CheckCircle className="w-5 h-5 stroke-[1.75]" />
+              </div>
+              <h3 className="text-base font-bold text-navy-900 mb-1">Evaluation</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Compare, evaluate, and shortlist proposals.
+              </p>
             </div>
-            <div>
-              <div className="flex justify-center mb-2"><Zap className="h-6 w-6 text-blue-600" /></div>
-              <p className="text-3xl font-bold text-navy-900">18</p>
-              <p className="text-sm font-medium text-gray-500">Pilots Completed</p>
+
+            {/* Card 4 */}
+            <div className="bg-gray-50/70 border border-gray-100 rounded-lg p-5 flex flex-col items-center text-center hover:border-blue-100 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                <TrendingUp className="w-5 h-5 stroke-[1.75]" />
+              </div>
+              <h3 className="text-base font-bold text-navy-900 mb-1">Pilot & Scale</h3>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                Move selected solutions toward implementation.
+              </p>
             </div>
           </div>
         </div>
