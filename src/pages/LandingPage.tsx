@@ -7,20 +7,40 @@ const LandingPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-navy-900 text-white pt-20 pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-            Empowering Government. <br className="hidden md:block" />
-            <span className="text-blue-400">Accelerating Innovation.</span>
-          </h1>
-          <p className="mt-4 text-xl md:text-2xl text-navy-200 max-w-3xl mx-auto mb-10">
-            Empower India helps government departments discover, evaluate, pilot, and scale innovative solutions from eligible startups.
+      <section className="bg-navy-900 text-white pt-10 pb-20 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-24">
+        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+          {/* Eyebrow */}
+          <p className="text-xs sm:text-sm font-semibold tracking-widest text-blue-400 uppercase mb-3 sm:mb-4">
+            EMPOWER INDIA
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/challenges" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors flex items-center justify-center gap-2">
-              Explore Challenges <ArrowRight className="w-5 h-5" />
+
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-3 sm:mb-4">
+            <span className="block sm:inline">Empowering </span>
+            <span className="block sm:inline">Government. </span>
+            <br className="hidden sm:block" />
+            <span className="text-blue-400 block sm:inline">Accelerating </span>
+            <span className="text-blue-400 block sm:inline">Innovation.</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-base sm:text-lg md:text-xl text-navy-200 max-w-2xl mx-auto mb-6 sm:mb-7 leading-relaxed">
+            Connecting government challenges with innovative startup solutions.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <Link
+              to="/challenges"
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 rounded-md font-semibold text-base sm:text-lg transition-colors flex items-center justify-center gap-2 shadow-sm"
+            >
+              <span>Explore Challenges</span>
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
-            <Link to="/startups" className="bg-transparent border border-navy-400 hover:border-white text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors flex items-center justify-center">
+            <Link
+              to="/startups"
+              className="w-full sm:w-auto bg-transparent border border-navy-400 hover:border-white text-white px-6 sm:px-8 py-3 rounded-md font-semibold text-base sm:text-lg transition-colors flex items-center justify-center"
+            >
               I'm a Startup
             </Link>
           </div>
