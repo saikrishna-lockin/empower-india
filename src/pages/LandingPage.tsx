@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Lightbulb, Search, CheckCircle, TrendingUp, Building2, Users, FileText, Zap, Rocket } from 'lucide-react';
+import { ArrowRight, Lightbulb, Search, CheckCircle, TrendingUp, Building2, Users, FileText, Zap, Rocket, MapPin } from 'lucide-react';
 import { mockChallenges } from '../mockData';
 
 const LandingPage = () => {
@@ -251,45 +251,133 @@ const LandingPage = () => {
       </section>
 
       {/* Featured Challenges */}
-      <section className="py-20 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-end mb-10">
-            <div>
-              <h2 className="text-3xl font-bold text-navy-900 mb-2">Featured Challenges</h2>
-              <p className="text-gray-600">Discover active problems seeking innovative solutions.</p>
-            </div>
-            <Link to="/challenges" className="hidden sm:flex text-blue-600 hover:text-blue-700 font-medium items-center gap-1">
-              View All <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight mb-2">Featured Challenges</h2>
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+              Explore real-world problems where innovative startup solutions can make an impact.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mockChallenges.slice(0, 3).map(challenge => (
-              <div key={challenge.id} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
-                <div className="p-6 flex-grow">
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full">
-                      {challenge.category}
-                    </span>
-                    <span className={`text-xs font-semibold px-2 py-1 rounded-md ${challenge.status === 'Open' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>
-                      {challenge.status}
-                    </span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Challenge Card 1 */}
+            <div className="bg-white border border-gray-200/80 rounded-xl p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-block px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">
+                    Water Management
+                  </span>
+                  <span className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                    Open for Solutions
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-navy-900 mb-2">
+                  Smart Water Leakage Detection
+                </h3>
+                <div className="flex flex-col gap-1.5 text-xs text-gray-500 mb-3.5">
+                  <div className="flex items-center gap-1.5">
+                    <Building2 className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                    <span>Chennai Metropolitan Water Supply</span>
                   </div>
-                  <h3 className="text-xl font-bold text-navy-900 mb-2">{challenge.title}</h3>
-                  <p className="text-sm text-gray-500 mb-4">{challenge.department} • {challenge.location}</p>
-                  <p className="text-gray-600 text-sm line-clamp-3">{challenge.description}</p>
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                    <span>Tamil Nadu</span>
+                  </div>
                 </div>
-                <div className="px-6 py-4 border-t border-gray-100 bg-gray-50">
-                  <Link to={`/login`} className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
-                    View Challenge Details <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </div>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                  Develop an affordable solution to detect and reduce water loss in municipal pipelines.
+                </p>
               </div>
-            ))}
+              <div className="pt-3.5 border-t border-gray-100">
+                <Link to="/challenges" className="text-blue-600 hover:text-blue-800 text-sm font-semibold inline-flex items-center gap-1 transition-colors">
+                  <span>View Challenge</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Challenge Card 2 */}
+            <div className="bg-white border border-gray-200/80 rounded-xl p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-block px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">
+                    Waste Management
+                  </span>
+                  <span className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                    Open for Solutions
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-navy-900 mb-2">
+                  Intelligent Waste Segregation
+                </h3>
+                <div className="flex flex-col gap-1.5 text-xs text-gray-500 mb-3.5">
+                  <div className="flex items-center gap-1.5">
+                    <Building2 className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                    <span>Urban Local Body</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                    <span>Tamil Nadu</span>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                  Improve source-level waste segregation using an efficient and scalable technology solution.
+                </p>
+              </div>
+              <div className="pt-3.5 border-t border-gray-100">
+                <Link to="/challenges" className="text-blue-600 hover:text-blue-800 text-sm font-semibold inline-flex items-center gap-1 transition-colors">
+                  <span>View Challenge</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Challenge Card 3 */}
+            <div className="bg-white border border-gray-200/80 rounded-xl p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between h-full">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-block px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">
+                    Healthcare
+                  </span>
+                  <span className="inline-flex items-center text-xs font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+                    Open for Solutions
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-navy-900 mb-2">
+                  Remote Public Health Monitoring
+                </h3>
+                <div className="flex flex-col gap-1.5 text-xs text-gray-500 mb-3.5">
+                  <div className="flex items-center gap-1.5">
+                    <Building2 className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                    <span>Public Health Department</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                    <span>India</span>
+                  </div>
+                </div>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                  Enable efficient monitoring of selected public-health indicators through an accessible digital solution.
+                </p>
+              </div>
+              <div className="pt-3.5 border-t border-gray-100">
+                <Link to="/challenges" className="text-blue-600 hover:text-blue-800 text-sm font-semibold inline-flex items-center gap-1 transition-colors">
+                  <span>View Challenge</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="mt-8 text-center sm:hidden">
-            <Link to="/challenges" className="inline-flex text-blue-600 hover:text-blue-700 font-medium items-center gap-1">
-              View All Challenges <ArrowRight className="w-4 h-4" />
+
+          {/* Section-level Button */}
+          <div className="mt-10 sm:mt-12 text-center">
+            <Link
+              to="/challenges"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-navy-900/15 bg-white text-navy-900 font-semibold text-sm hover:bg-gray-50 hover:border-navy-900/30 transition-all shadow-xs"
+            >
+              <span>View All Challenges</span>
+              <ArrowRight className="w-4 h-4 text-blue-600" />
             </Link>
           </div>
         </div>
