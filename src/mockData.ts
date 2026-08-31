@@ -4,46 +4,91 @@ export interface Challenge {
   department: string;
   location: string;
   category: string;
-  status: 'Open' | 'Evaluating' | 'Closed';
+  status: 'Open for Solutions' | 'Under Evaluation' | 'Pilot in Progress';
   description: string;
 }
 
 export const mockChallenges: Challenge[] = [
   {
     id: 'c1',
-    title: 'AI for Traffic Optimization',
-    department: 'Ministry of Road Transport and Highways',
-    location: 'New Delhi, Delhi',
-    category: 'Smart Cities',
-    status: 'Open',
-    description: 'Seeking innovative AI-driven solutions to predict and optimize traffic flow at major intersections in metropolitan areas during peak hours.'
+    title: 'Smart Water Leakage Detection',
+    department: 'Chennai Metropolitan Water Supply',
+    location: 'Tamil Nadu',
+    category: 'Water Management',
+    status: 'Open for Solutions',
+    description: 'Develop an affordable solution to detect and reduce water loss in municipal pipelines.'
   },
   {
     id: 'c2',
-    title: 'Smart Leakage Detection',
-    department: 'Ministry of Jal Shakti',
-    location: 'Bengaluru, Karnataka',
-    category: 'Water Management',
-    status: 'Open',
-    description: 'Looking for cost-effective IoT sensors and predictive analytics to detect and prevent leakages in urban water distribution networks.'
+    title: 'Intelligent Waste Segregation',
+    department: 'Urban Local Body',
+    location: 'Tamil Nadu',
+    category: 'Waste Management',
+    status: 'Open for Solutions',
+    description: 'Improve source-level waste segregation using an efficient and scalable technology solution.'
   },
   {
     id: 'c3',
-    title: 'Telemedicine Rural Outreach',
-    department: 'Ministry of Health and Family Welfare',
-    location: 'Bhopal, Madhya Pradesh',
-    category: 'Public Healthcare',
-    status: 'Evaluating',
-    description: 'A challenge to develop low-bandwidth telemedicine platforms capable of connecting rural primary health centers with specialized urban hospitals.'
+    title: 'Remote Public Health Monitoring',
+    department: 'Public Health Department',
+    location: 'India',
+    category: 'Healthcare',
+    status: 'Open for Solutions',
+    description: 'Enable efficient monitoring of selected public-health indicators through an accessible digital solution.'
   },
   {
     id: 'c4',
-    title: 'Automated Solid Waste Sorting',
-    department: 'Ministry of Housing and Urban Affairs',
-    location: 'Pune, Maharashtra',
-    category: 'Waste Management',
-    status: 'Open',
-    description: 'Deploying robotics and machine vision to automatically sort municipal solid waste at scale in decentralized processing facilities.'
+    title: 'AI-Driven Urban Traffic Flow Optimization',
+    department: 'Directorate of Urban Land Transport',
+    location: 'Karnataka',
+    category: 'Smart Cities',
+    status: 'Open for Solutions',
+    description: 'Seeking computer vision and AI algorithms to dynamically adapt traffic signal timers and alleviate peak congestion.'
+  },
+  {
+    id: 'c5',
+    title: 'Automated Crop Pest & Disease Early Warning',
+    department: 'Department of Agriculture & Farmers Welfare',
+    location: 'Gujarat',
+    category: 'Agriculture',
+    status: 'Under Evaluation',
+    description: 'Deploying drone imagery and mobile edge AI to diagnose crop infestations before wide regional spread.'
+  },
+  {
+    id: 'c6',
+    title: 'Emergency Response & Incident Dispatch Platform',
+    department: 'State Disaster Management Authority',
+    location: 'Delhi',
+    category: 'Public Safety',
+    status: 'Open for Solutions',
+    description: 'Integrating multi-agency emergency communications into a unified real-time dashboard for rapid first responder dispatch.'
+  },
+  {
+    id: 'c7',
+    title: 'Decentralized Solar Cold Storage for Perishables',
+    department: 'State Agricultural Marketing Board',
+    location: 'Maharashtra',
+    category: 'Agriculture',
+    status: 'Pilot in Progress',
+    description: 'Low-cost, solar-powered modular micro-cold storage solutions for smallholder farmers to curb post-harvest losses.'
+  },
+  {
+    id: 'c8',
+    title: 'Rural Telemedicine Connectivity Suite',
+    department: 'Ministry of Health & Family Welfare',
+    location: 'Madhya Pradesh',
+    category: 'Healthcare',
+    status: 'Under Evaluation',
+    description: 'Developing low-bandwidth diagnostic and video consultation tools tailored for Primary Health Centres.'
+  },
+  {
+    id: 'c9',
+    title: 'Smart Municipal Drainage & Flood Detection',
+    department: 'Municipal Corporation',
+    location: 'Maharashtra',
+    category: 'Water Management',
+    status: 'Open for Solutions',
+    description: 'IoT sensor grid to monitor stormwater drainage capacity and provide automated alerts during severe monsoon surges.'
   }
 ];
 
