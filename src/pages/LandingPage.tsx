@@ -105,118 +105,142 @@ const LandingPage = () => {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-14 sm:py-16 md:py-20 bg-gray-50 border-t border-gray-100">
+      <section id="how-it-works" className="py-12 sm:py-16 bg-gray-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 sm:mb-14">
+          <div className="text-center mb-8 sm:mb-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight mb-2">How It Works</h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-              A streamlined process connecting government challenges with startup innovation.
+              A streamlined process connecting government problems with startup innovations.
             </p>
           </div>
 
-          {/* Desktop: Horizontal 4-Step Flow */}
-          <div className="hidden md:grid md:grid-cols-4 gap-6 relative">
-            {/* Connecting Horizontal Line */}
-            <div className="absolute top-[42px] left-16 right-16 h-0.5 bg-blue-200 z-0"></div>
-
+          {/* Desktop Flow: 01 Identify → 02 Discover → 03 Evaluate → 04 Pilot & Scale */}
+          <div className="hidden md:grid md:grid-cols-4 gap-4 lg:gap-5 relative">
             {/* Step 1 */}
-            <div className="relative z-10 bg-white p-5 lg:p-6 rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-              <div className="w-11 h-11 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center mb-3.5 shadow-xs">
-                01
+            <div className="relative bg-white p-5 rounded-xl border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">01</span>
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <Lightbulb className="w-4 h-4" />
+                  </div>
+                </div>
+                <h3 className="text-base font-bold text-navy-900 mb-1">Identify</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Government departments define real-world problems.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-navy-900 mb-1.5">Identify</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Government departments post real-world challenges.
-              </p>
+              <ArrowRight className="hidden md:block absolute -right-2.5 lg:-right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-300 z-10" />
             </div>
 
             {/* Step 2 */}
-            <div className="relative z-10 bg-white p-5 lg:p-6 rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-              <div className="w-11 h-11 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center mb-3.5 shadow-xs">
-                02
+            <div className="relative bg-white p-5 rounded-xl border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">02</span>
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <Search className="w-4 h-4" />
+                  </div>
+                </div>
+                <h3 className="text-base font-bold text-navy-900 mb-1">Discover</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Eligible startups submit innovative solutions.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-navy-900 mb-1.5">Discover</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Eligible startups submit innovative solutions.
-              </p>
+              <ArrowRight className="hidden md:block absolute -right-2.5 lg:-right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-300 z-10" />
             </div>
 
             {/* Step 3 */}
-            <div className="relative z-10 bg-white p-5 lg:p-6 rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-              <div className="w-11 h-11 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center mb-3.5 shadow-xs">
-                03
+            <div className="relative bg-white p-5 rounded-xl border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">03</span>
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <FileText className="w-4 h-4" />
+                  </div>
+                </div>
+                <h3 className="text-base font-bold text-navy-900 mb-1">Evaluate</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Solutions are reviewed, compared, and shortlisted.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-navy-900 mb-1.5">Evaluate</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Solutions are reviewed, compared, and shortlisted.
-              </p>
+              <ArrowRight className="hidden md:block absolute -right-2.5 lg:-right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-300 z-10" />
             </div>
 
             {/* Step 4 */}
-            <div className="relative z-10 bg-white p-5 lg:p-6 rounded-xl border border-gray-200/80 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center">
-              <div className="w-11 h-11 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center mb-3.5 shadow-xs">
-                04
+            <div className="relative bg-white p-5 rounded-xl border border-gray-200/80 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100">04</span>
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <Rocket className="w-4 h-4" />
+                  </div>
+                </div>
+                <h3 className="text-base font-bold text-navy-900 mb-1">Pilot & Scale</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  Selected solutions move toward implementation.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-navy-900 mb-1.5">Pilot</h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Selected solutions move toward implementation.
-              </p>
             </div>
           </div>
 
-          {/* Mobile / Tablet: Clean Vertical Timeline */}
+          {/* Mobile: Compact Vertical Flow with Connecting Line */}
           <div className="md:hidden relative max-w-md mx-auto">
             {/* Connecting Vertical Line */}
-            <div className="absolute top-6 bottom-6 left-[36px] w-0.5 bg-blue-200 z-0"></div>
+            <div className="absolute top-5 bottom-5 left-5 w-0.5 bg-blue-200 z-0"></div>
 
-            <div className="space-y-3.5">
+            <div className="space-y-3">
               {/* Step 1 */}
-              <div className="relative z-10 flex items-start gap-4 bg-white p-4 rounded-xl border border-gray-200/80 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center shrink-0 shadow-xs">
-                  01
+              <div className="relative z-10 flex items-center gap-3.5 bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 font-bold text-xs flex flex-col items-center justify-center shrink-0">
+                  <Lightbulb className="w-3.5 h-3.5 mb-0.5" />
+                  <span>01</span>
                 </div>
-                <div className="pt-0.5">
-                  <h3 className="text-base font-bold text-navy-900">Identify</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5 leading-relaxed">
-                    Government departments post real-world challenges.
+                <div>
+                  <h3 className="text-sm font-bold text-navy-900">Identify</h3>
+                  <p className="text-xs text-gray-600 leading-snug">
+                    Government departments define real-world problems.
                   </p>
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="relative z-10 flex items-start gap-4 bg-white p-4 rounded-xl border border-gray-200/80 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center shrink-0 shadow-xs">
-                  02
+              <div className="relative z-10 flex items-center gap-3.5 bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 font-bold text-xs flex flex-col items-center justify-center shrink-0">
+                  <Search className="w-3.5 h-3.5 mb-0.5" />
+                  <span>02</span>
                 </div>
-                <div className="pt-0.5">
-                  <h3 className="text-base font-bold text-navy-900">Discover</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5 leading-relaxed">
+                <div>
+                  <h3 className="text-sm font-bold text-navy-900">Discover</h3>
+                  <p className="text-xs text-gray-600 leading-snug">
                     Eligible startups submit innovative solutions.
                   </p>
                 </div>
               </div>
 
               {/* Step 3 */}
-              <div className="relative z-10 flex items-start gap-4 bg-white p-4 rounded-xl border border-gray-200/80 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center shrink-0 shadow-xs">
-                  03
+              <div className="relative z-10 flex items-center gap-3.5 bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 font-bold text-xs flex flex-col items-center justify-center shrink-0">
+                  <FileText className="w-3.5 h-3.5 mb-0.5" />
+                  <span>03</span>
                 </div>
-                <div className="pt-0.5">
-                  <h3 className="text-base font-bold text-navy-900">Evaluate</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5 leading-relaxed">
+                <div>
+                  <h3 className="text-sm font-bold text-navy-900">Evaluate</h3>
+                  <p className="text-xs text-gray-600 leading-snug">
                     Solutions are reviewed, compared, and shortlisted.
                   </p>
                 </div>
               </div>
 
               {/* Step 4 */}
-              <div className="relative z-10 flex items-start gap-4 bg-white p-4 rounded-xl border border-gray-200/80 shadow-sm">
-                <div className="w-10 h-10 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 font-bold text-sm flex items-center justify-center shrink-0 shadow-xs">
-                  04
+              <div className="relative z-10 flex items-center gap-3.5 bg-white p-3.5 rounded-xl border border-gray-200/80 shadow-xs">
+                <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 text-blue-600 font-bold text-xs flex flex-col items-center justify-center shrink-0">
+                  <Rocket className="w-3.5 h-3.5 mb-0.5" />
+                  <span>04</span>
                 </div>
-                <div className="pt-0.5">
-                  <h3 className="text-base font-bold text-navy-900">Pilot</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 mt-0.5 leading-relaxed">
+                <div>
+                  <h3 className="text-sm font-bold text-navy-900">Pilot & Scale</h3>
+                  <p className="text-xs text-gray-600 leading-snug">
                     Selected solutions move toward implementation.
                   </p>
                 </div>
