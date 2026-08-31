@@ -7,6 +7,8 @@ import ChallengesPage from './pages/ChallengesPage';
 import StartupsPage from './pages/StartupsPage';
 import AboutPage from './pages/AboutPage';
 import LoginPage from './pages/LoginPage';
+import ChallengeDetailPage from './pages/ChallengeDetailPage';
+import SubmitSolutionPage from './pages/SubmitSolutionPage';
 import Preloader from './components/Preloader';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/challenges" element={<ChallengesPage />} />
+            <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
+            <Route path="/submit-solution" element={<SubmitSolutionPage />} />
             <Route path="/startups" element={<StartupsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/login" element={<LoginPage />} />

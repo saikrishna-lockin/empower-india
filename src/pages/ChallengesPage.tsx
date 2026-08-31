@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { Search, MapPin, Building2, ArrowRight, RotateCcw, X, CheckCircle2, Clock } from 'lucide-react';
 import { mockChallenges, type Challenge } from '../mockData';
 
@@ -7,7 +8,6 @@ const ChallengesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedStatus, setSelectedStatus] = useState('');
-  const [activeChallenge, setActiveChallenge] = useState<Challenge | null>(null);
 
   // Extract unique filter options dynamically from mockChallenges
   const categories = useMemo(() => Array.from(new Set(mockChallenges.map(c => c.category))).sort(), []);
@@ -229,16 +229,15 @@ const ChallengesPage = () => {
                   </p>
                 </div>
 
-                {/* View Challenge Button */}
+                {/* View Challenge Link */}
                 <div className="pt-3.5 border-t border-gray-100 mt-auto">
-                  <button
-                    type="button"
-                    onClick={() => setActiveChallenge(challenge)}
+                  <Link
+                    to={`/challenges/${challenge.id}`}
                     className="text-blue-600 hover:text-blue-800 text-sm font-semibold inline-flex items-center gap-1 transition-colors w-full justify-between"
                   >
                     <span>View Challenge</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -263,94 +262,7 @@ const ChallengesPage = () => {
             </button>
           </div>
         )}
-
       </div>
-
-      {/* Challenge Detail Modal */}
-      {activeChallenge && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-900/60 backdrop-blur-xs animate-fade-in-scale">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-gray-200 relative max-h-[90vh] overflow-y-auto">
-            
-            {/* Modal Header */}
-            <div className="flex items-start justify-between gap-4 mb-4">
-              <div className="flex items-center gap-2">
-                <span className="inline-block px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">
-                  {activeChallenge.category}
-                </span>
-                {getStatusBadge(activeChallenge.status)}
-              </div>
-              <button
-                type="button"
-                onClick={() => setActiveChallenge(null)}
-                className="text-gray-400 hover:text-gray-600 p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <h2 className="text-2xl font-bold text-navy-900 mb-3 leading-snug">
-              {activeChallenge.title}
-            </h2>
-
-            {/* Department & Location Meta */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 mb-6 text-xs sm:text-sm">
-              <div className="flex items-center gap-2 text-gray-700">
-                <Building2 className="w-4 h-4 text-blue-600 shrink-0" />
-                <div>
-                  <p className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Department</p>
-                  <p className="font-semibold text-navy-900">{activeChallenge.department}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 text-gray-700">
-                <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
-                <div>
-                  <p className="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Location</p>
-                  <p className="font-semibold text-navy-900">{activeChallenge.location}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Challenge Scope / Description */}
-            <div className="mb-6">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Problem Statement</h4>
-              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                {activeChallenge.description}
-              </p>
-            </div>
-
-            {/* Evaluation & Pilot Details (Prototype Info) */}
-            <div className="space-y-3 p-4 bg-blue-50/60 rounded-xl border border-blue-100 text-xs sm:text-sm text-navy-900 mb-6">
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                <span><strong>Eligibility:</strong> Open to DPIIT-recognized startups & verified innovators.</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                <span><strong>Pilot Funding:</strong> Fast-track pilot procurement mechanism available upon evaluation.</span>
-              </div>
-            </div>
-
-            {/* Modal Actions */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-100">
-              <button
-                type="button"
-                onClick={() => setActiveChallenge(null)}
-                className="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-semibold text-sm hover:bg-gray-50 transition-colors"
-              >
-                Close
-              </button>
-              <a
-                href="/login"
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-colors text-center shadow-xs"
-              >
-                Apply as Startup →
-              </a>
-            </div>
-
-          </div>
-        </div>
-      )}
-
     </div>
   );
 };
