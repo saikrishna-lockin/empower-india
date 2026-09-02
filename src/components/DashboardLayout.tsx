@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
-  Shield, 
   Menu, 
   X, 
   ArrowLeft, 
@@ -12,6 +11,7 @@ import {
   Settings, 
   UserCircle
 } from 'lucide-react';
+import EmpowerLogo, { EmpowerLogoMark } from './EmpowerLogo';
 
 interface SidebarItem {
   name: string;
@@ -104,10 +104,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
 
-              <Link to="/" className="flex items-center gap-2">
-                <Shield className="h-7 w-7 text-blue-400" />
-                <span className="font-bold text-lg tracking-wide hidden sm:inline">Empower India</span>
-              </Link>
+              <EmpowerLogo href="/" size="sm" textColor="text-white" />
 
               <div className="hidden sm:block h-5 w-px bg-navy-700"></div>
 
@@ -247,7 +244,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-gray-100 mb-4">
                   <div className="flex items-center gap-2">
-                    <Shield className="w-6 h-6 text-blue-600" />
+                    <EmpowerLogoMark sizeClass="w-6 h-6" />
                     <span className="font-bold text-sm text-navy-900">Portal Navigation</span>
                   </div>
                   <button

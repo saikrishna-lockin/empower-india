@@ -6,10 +6,10 @@ import {
   Scale, 
   Settings, 
   ArrowRight, 
-  Shield, 
   ArrowLeft,
   Sparkles
 } from 'lucide-react';
+import EmpowerLogo from '../components/EmpowerLogo';
 
 const roleCards = [
   {
@@ -64,10 +64,9 @@ const LoginPage = () => {
       
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-        <Link to="/" className="inline-flex items-center gap-2 mb-4">
-          <Shield className="h-10 w-10 text-blue-600" />
-          <span className="font-extrabold text-2xl text-navy-900 tracking-wide">Empower India</span>
-        </Link>
+        <div className="mb-4">
+          <EmpowerLogo href="/" size="lg" textColor="text-navy-900" />
+        </div>
         
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
           <Sparkles className="w-3.5 h-3.5 text-blue-600" />
